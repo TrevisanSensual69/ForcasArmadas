@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel ='stylesheet' href="/static/estilo.css">
+    <title>{{ Titulo }}Title</title>
+</head>
+<body>
+
+<div class="militar-card">
+    <div class="page-header">
+          <h1>{{ Titulo }}</h1>
+    </div>
+    <form action="/alterar" method="post">
+        <fieldset>
+            <div class="form-group">
+                <label for = "ID-Militares">ID</label>
+                <input type= "hidden"  name="ID-Militares" id="ID-Militares" value={{  Militaresedit.idmilitar }}  required>
+            </div>
+
+
+            <div class="form-group">
+                <label for = "patente">Patente do Militar</label>
+                <input type="text" name="patente" id="patente" value={{  Militaresedit.patente }} required>
+            </div>
+
+            <div class="form-group">
+                <label for = "codigo">Código da Patente</label>
+                <input type= "number"  name="codigo" id="codigo" value="{{  Militaresedit.codigo }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for = "ramo">Ramo das Forças</label>
+                <select name ="ramo" id="ramo" required>
+                    <option value="" selected>Selecione uma Opção</option>
+                    <option value="Exercito" selected> Exercito</option>
+                    <option value="Marinha" selected> Marinha</option>
+                    <option value="Força Aerea" selected> Força Aerea</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for = "nipatente">Nível de Patente</label>
+                <select name ="nipatente" id="nipatente" required>
+                    <option value="patente" selected>Selecione uma Opção</option>
+                    <option value="Oficial General" selected> Oficial General </option>
+                    <option value="Oficial Superior" selected> Oficial Superior </option>
+                    <option value="Oficial Intermediario" selected> Oficial Intermediário</option>
+                    <option value="Oficial Subalterno" selected> Oficial Subalterno</option>
+                    <option value="Praça Graduado" selected> Praça Graduado</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for = "descricao"> Descrição da Patente</label>
+                <input type="text" name="descricao" id="descricao" value="{{  Militaresedit.descricao }}" required>
+            </div>
+
+
+            <button type="submit" class="btn-salvar">Enviar</button>
+            <button type="reset" class="btn-salvar">Reset</button>
+
+        </fieldset>
+
+    </form>
+
+</div>
+
+</body>
+</html>

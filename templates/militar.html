@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/estilo.css">
+    <title>{{ Titulo }}</title>
+</head>
+<body>
+   <div>
+        <h1>{{ Titulo }}</h1>
+    </div>
+    {% for Militares in ListaMilitares %}
+        <div class="militar-card">
+            <h2>Nome:{{ Militares.patente }}</h2>
+            <p>Tipo: {{ Militares.codigo }}</p>
+            <p>Altura: {{ Militares.ramo }}</p>
+            <p>Peso: {{ Militares.nipatente }}</p>
+            <p>Peso: {{ Militares.descricao }}</p>
+            <br>
+
+        <a href="excluir/{{ Militares.idmilitar }}">Excluir</a>
+        <a href="editar/{{ Militares.idmilitar }}">Editar</a>
+
+
+        </div>
+
+    {%endfor%}
+</body>
+</html>
